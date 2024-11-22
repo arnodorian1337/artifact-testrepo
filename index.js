@@ -11124,6 +11124,8 @@ function run() {
                     options.retentionDays = inputs.retentionDays;
                 }
                 const uploadResponse = yield artifactClient.uploadArtifact(inputs.artifactName, searchResult.filesToUpload, searchResult.rootDirectory, options);
+                core.info(`FiletoUpload ${searchResult.filesToUpload}`);
+                core.info(`rootDirectory ${searchResult.rootDirectory}`);
                 if (uploadResponse.failedItems.length > 0) {
                     core.setFailed(`An error was encountered when uploading ${uploadResponse.artifactName}. There were ${uploadResponse.failedItems.length} items that failed to upload.`);
                 }
