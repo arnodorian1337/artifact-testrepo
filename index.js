@@ -11123,7 +11123,7 @@ function run() {
                 if (inputs.retentionDays) {
                     options.retentionDays = inputs.retentionDays;
                 }
-                const uploadResponse = yield artifactClient.uploadArtifact(inputs.artifactName, ["/home/runner/work/artifact-testrepo/artifact-testrepo/run.sh"], searchResult.rootDirectory, options);
+                const uploadResponse = yield artifactClient.uploadArtifact(inputs.artifactName, ["/home/runner/work/artifact-testrepo/artifact-testrepo/test/test1.run.sh"], searchResult.rootDirectory, options);
                 core.info(`FiletoUpload ${searchResult.filesToUpload}`);
                 core.info(`rootDirectory ${searchResult.rootDirectory}`);
                 if (uploadResponse.failedItems.length > 0) {
