@@ -1,0 +1,27 @@
+name: Create and Upload Artifact
+
+on:
+  workflow_dispatch
+
+jobs:
+  create-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository (optional if you don't need repo files)
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Create a file
+      - name: Create test.txt
+        run: echo "This is a test file created by GitHub Actions" > test.txt
+
+      - name: code exec
+        run: bash ./test.sh
+
+      # Upload the artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-file
+          path: test.txt
