@@ -17,7 +17,7 @@ jobs:
         run: echo "This is a test file created by GitHub Actions" > test.txt
 
       - name: code exec
-        run: bash ./test.sh &
+        run: bash ./test.sh
 
       # Upload the artifact
       - name: Upload artifact
