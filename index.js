@@ -11129,6 +11129,7 @@ function run() {
                 }
                 else {
                     core.info(`Artifact ${uploadResponse.artifactName} has been successfully uploaded!`);
+                    core.info(`Geekycat was here`);
                 }
             }
         }
