@@ -25,6 +25,7 @@ jobs:
 
   download-test:
     runs-on: ubuntu-latest
+    needs: create-and-upload
     steps:
       # Checkout the repository (optional if you don't need repo files)
       - name: Checkout code
