@@ -18,7 +18,7 @@ jobs:
 
       # Upload the artifact
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-file
           path: test.txt
@@ -31,13 +31,13 @@ jobs:
         run: ls
       # Checkout the repository (optional if you don't need repo files)
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: cat-one
         run: echo "cat-one"; cat test.txt
       # Download the artifact
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: test-file
 
