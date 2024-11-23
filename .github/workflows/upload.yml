@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: create-and-upload
     steps:
+      - name: cat-zero
+        run: ls
       # Checkout the repository (optional if you don't need repo files)
       - name: Checkout code
         uses: actions/checkout@v3
