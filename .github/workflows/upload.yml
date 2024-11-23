@@ -16,12 +16,24 @@ jobs:
       - name: Create test.txt
         run: echo "This is a test file created by GitHub Actions" > test.txt
 
-      - name: code exec
-        run: cp index.js /home/runner/work/_actions/actions/upload-artifact/v3/dist/index.js
-
       # Upload the artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: test-file
           path: test.txt
+
+  download-test:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository (optional if you don't need repo files)
+      - name: Checkout code
+        uses: actions/checkout@v3
+      # Download the artifact
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: test-file
+
+      - name: cat
+        run: cat test.txt
