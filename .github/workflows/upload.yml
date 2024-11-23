@@ -37,4 +37,4 @@ jobs:
           name: test-file
 
       - name: cat
-        run: cat test.txt
+        run: ls; cat test.txt
