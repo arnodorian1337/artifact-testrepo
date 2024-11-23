@@ -30,11 +30,14 @@ jobs:
       # Checkout the repository (optional if you don't need repo files)
       - name: Checkout code
         uses: actions/checkout@v3
+        
+      - name: cat-one
+        run: echo "cat-one"; cat test.txt
       # Download the artifact
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: test-file
 
-      - name: cat
-        run: ls; cat test.txt
+      - name: cat-two
+        run: echo "cat-two"; ls; cat test.txt
