@@ -1,0 +1,21 @@
+name: Create and Upload Artifact
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  create-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository (optional if you don't need repo files)
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Upload the artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-file
+          path: test.txt
