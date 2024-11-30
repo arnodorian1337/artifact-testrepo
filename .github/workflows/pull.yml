@@ -5,14 +5,8 @@ on:
   pull_request:
 
 jobs:
-  create-and-upload:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checkout the repository (optional if you don't need repo files)
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Upload the artifact
-      - name: calling workflow
-        uses: ./.github/workflows/call.yml
+  flakybot:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    uses: ./.github/workflows/call.yaml
