@@ -1,10 +1,7 @@
 name: Workflow Run
 
 on:
-  workflow_run:
-    workflows: ['Create and Upload Artifact']
-    types:
-      - completed
+  workflow_call
 
 permissions:
   contents: write
